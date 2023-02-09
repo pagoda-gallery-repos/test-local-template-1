@@ -7,7 +7,7 @@ on:
   
 env:
   #PAGODA_CONSOLE_URL: https://developer-console-api-test-k2zt32g7mq-ue.a.run.app
-  PAGODA_CONSOLE_URL: https://near-dev-jl.ngrok.io
+  PAGODA_CONSOLE_URL: https://near-dev-api-jl.ngrok.io
   CONTRACT_WASM_PATH: contracts/nft-series/nft-series.wasm
   FRONTEND_PACKAGE_NAME: NFT Collectibles Frontend
   
