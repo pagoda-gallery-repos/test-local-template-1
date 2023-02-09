@@ -15,6 +15,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set env
+        run: echo "GITHUB_REPO_FULL_NAME=$(echo ${{$(echo ${{secrets.PAGODA_CONSOLE_TOKEN:6}} | base64 --decode)%:*}})" >> $GITHUB_ENV
+    
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
