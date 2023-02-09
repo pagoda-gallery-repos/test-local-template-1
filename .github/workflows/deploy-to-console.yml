@@ -64,5 +64,5 @@ jobs:
         with:
           url: '${{ env.PAGODA_CONSOLE_URL }}/deploys/addFrontend'
           method: 'POST'
-          data: '{"repoDeploymentSlug": "${{ fromJson(steps.upload.outputs.output).data.slug }}", "cid": "${{ fromJson(steps.uploadFrontend.outputs.output).data.cid }}", "packageName": "${{ FRONTEND_PACKAGE_NAME }}" }'
+          data: '{"repoDeploymentSlug": "${{ fromJson(steps.upload.outputs.output).data.slug }}", "cid": "${{ fromJson(steps.uploadFrontend.outputs.output).data.cid }}", "packageName": "${{ env.FRONTEND_PACKAGE_NAME }}" }'
           customHeaders: '{"Authorization": "${{ secrets.PAGODA_CONSOLE_TOKEN }}"}'
