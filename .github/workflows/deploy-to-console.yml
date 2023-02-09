@@ -45,7 +45,7 @@ jobs:
             
       - name: Build Frontend 🔧
         run: |
-          npm run build
+          cd frontend && next build && next export
         env:
           CONTRACT_NAME: "${{ fromJson(steps.upload.outputs.output).data.ContractDeployment[0].contractDeployConfig.nearAccountId }}"
 
@@ -56,7 +56,7 @@ jobs:
           url: '${{ env.PAGODA_CONSOLE_URL }}/ipfs/add'
           forms: '{}'
           customHeaders: '{"Authorization": "${{ secrets.PAGODA_CONSOLE_TOKEN }}"}'
-          directory: frontend/dist
+          directory: frontend/out
 
       - name: Update frontend url
         id: update-frontend-url
