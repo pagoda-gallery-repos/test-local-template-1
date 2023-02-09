@@ -45,7 +45,9 @@ jobs:
             
       - name: Build Frontend 🔧
         run: |
-          cd frontend && next build && next export
+          cd frontend
+          npx next build
+          npx next export
         env:
           CONTRACT_NAME: "${{ fromJson(steps.upload.outputs.output).data.ContractDeployment[0].contractDeployConfig.nearAccountId }}"
 
